@@ -10,20 +10,20 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <BookOpen className="h-8 w-8" />
-            <span className="ml-3 text-2xl font-bold">كنوز القراءات</span>
+            <span className="mr-3 text-2xl font-bold">كنوز القراءات</span>
           </div>
-          
-          <div className="hidden md:flex space-x-8 items-center">
-            <a href="#home" className="hover:text-emerald-200">الرئيسية</a>
-            <a href="#course" className="hover:text-emerald-200">عن الدورة</a>
-            <a href="#instructors" className="hover:text-emerald-200">المدرسون</a>
-            <a href="#resources" className="hover:text-emerald-200">المصادر</a>
+
+          <div className="hidden md:flex space-x-8 items-center flex-row-reverse" >
             <button className="bg-emerald-600 px-6 py-2 rounded-lg hover:bg-emerald-500 transition-colors">
               سجل الآن
             </button>
+            <a href="#instructors" className="hover:text-emerald-200">المدرسون</a>
+            <a href="#resources" className="hover:text-emerald-200">المصادر</a>
+            <a href="#course" className="hover:text-emerald-200">عن الدورة</a>
+            <a href="#home" className="hover:text-emerald-200">الرئيسية</a>
           </div>
 
-          <button 
+          <button
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >

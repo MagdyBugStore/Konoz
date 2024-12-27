@@ -1,7 +1,29 @@
-import React from 'react';
 import { BookOpen, Users, Clock, Award } from 'lucide-react';
 
 const Hero = () => {
+  const features = [
+    {
+      Icon: BookOpen,
+      title: 'دروس شاملة',
+      description: 'محتوى تعليمي متكامل',
+      },
+    {
+      Icon: Users,
+      title: 'أساتذة متخصصون',
+      description: 'خبرة في التعليم',
+      },
+    {
+      Icon: Clock,
+      title: 'مرونة في التعلم',
+      description: 'تعلم حسب وقتك',
+      },
+    {
+      Icon: Award,
+      title: 'شهادة معتمدة',
+      description: 'عند إتمام الدورة',
+      },
+  ];
+
   return (
     <section className="relative bg-gradient-to-b from-emerald-800 to-emerald-900 text-white py-20">
       <div className="container mx-auto px-6">
@@ -23,34 +45,18 @@ const Hero = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-16">
-          <div className="flex items-center space-x-4 bg-emerald-700/50 p-4 rounded-lg">
-            <BookOpen className="h-8 w-8" />
-            <div>
-              <h3 className="font-semibold">دروس شاملة</h3>
-              <p className="text-emerald-200">محتوى تعليمي متكامل</p>
+          {features.map(({ Icon, title, description}, index) => (
+            <div
+              key={index}
+              className="flex items-center space-x-4 bg-emerald-700/50 p-4 rounded-lg"
+            >
+              <Icon className={`h-8 w-8 ml-3`} />
+              <div>
+                <h3 className="font-semibold">{title}</h3>
+                <p className="text-emerald-200">{description}</p>
+              </div>
             </div>
-          </div>
-          <div className="flex items-center space-x-4 bg-emerald-700/50 p-4 rounded-lg">
-            <Users className="h-8 w-8" />
-            <div>
-              <h3 className="font-semibold">أساتذة متخصصون</h3>
-              <p className="text-emerald-200">خبرة في التعليم</p>
-            </div>
-          </div>
-          <div className="flex items-center space-x-4 bg-emerald-700/50 p-4 rounded-lg">
-            <Clock className="h-8 w-8" />
-            <div>
-              <h3 className="font-semibold">مرونة في التعلم</h3>
-              <p className="text-emerald-200">تعلم حسب وقتك</p>
-            </div>
-          </div>
-          <div className="flex items-center space-x-4 bg-emerald-700/50 p-4 rounded-lg">
-            <Award className="h-8 w-8" />
-            <div>
-              <h3 className="font-semibold">شهادة معتمدة</h3>
-              <p className="text-emerald-200">عند إتمام الدورة</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
